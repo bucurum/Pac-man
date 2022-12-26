@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.anyKeyDown && this.lives <= 0)
+        if (this.lives <= 0 && Input.anyKeyDown)
         {
             NewGame();
         }
@@ -43,9 +43,9 @@ public class GameManager : MonoBehaviour
         ResetGhostMultiplier();
         for(int i = 0; i < this.ghosts.Length ; i++)
         {
-            this.ghosts[i].gameObject.SetActive(true);
+            this.ghosts[i].ResetState();
         }
-        this.pacman.gameObject.SetActive(true);
+        this.pacman.ResetState();
     }
 
     private void SetScore(int score)
