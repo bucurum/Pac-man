@@ -80,7 +80,7 @@ public class GhostFrightened : GhostBehavior
         }
             
     }
-     private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
         Node node = other.GetComponent<Node>();
 
