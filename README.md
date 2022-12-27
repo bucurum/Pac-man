@@ -1,2 +1,2 @@
 # Packman
-This is Pacman`s clone game.
+This Game is Clone of Pac-man Game
