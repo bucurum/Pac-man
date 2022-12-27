@@ -95,13 +95,16 @@ public class GameManager : MonoBehaviour
             Invoke(nameof(NewRound), 3f);
         }
     }
-    public void PowerPelletEaten(PowerPellet pellet)
+    public void PowerPelletEaten(PowerPellet powerPellet)
     {
-        //TODO: changing ghost state.
-        PelletEaten(pellet);
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            this.ghosts[i].frightened.Enable(powerPellet.duration);
+        }
 
+        PelletEaten(powerPellet);
         CancelInvoke();
-        Invoke(nameof(ResetGhostMultiplier), pellet.duration);
+        Invoke(nameof(ResetGhostMultiplier), powerPellet.duration);
 
         
 
